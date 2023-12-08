@@ -68,7 +68,12 @@ console.log("kkk"+localStorage.getItem('mmm'));
       )
       //localStorage.setItem('mmm', '')
     }
+
     
+    if(localStorage.getItem('token'))
+    {
+      return <Redirect to={'profile'}/>
+    }     
 
     console.log(token);
     if(token){

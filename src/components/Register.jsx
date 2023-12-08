@@ -28,6 +28,7 @@ class Register extends Component {
         this.setState({
           loggedIn: true
         })
+
         this.props.setUser(response.data.user);
 
       }).catch((error) => {
@@ -45,6 +46,11 @@ class Register extends Component {
     if(token){
       return <Redirect to="/profile"/>
     }
+
+    if(localStorage.getItem('token'))
+    {
+      return <Redirect to={'profile'}/>
+    }  
     
     return (
       <div>
